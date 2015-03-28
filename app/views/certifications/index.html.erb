@@ -3,8 +3,9 @@
 <table>
   <thead>
     <tr>
-      <th>Cert name</th>
-      <th>Cert company</th>
+      <th></th>
+      <th>Certification</th>
+      <th>Company</th>
       <th>Category</th>
       <th>Description</th>
       <th></th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @certifications.each do |certification| %>
       <tr>
+        <td><img src="<%= certification.logo_url %>" alt="microsoft logo" hieght="40" width="40"></td>
         <td><%= certification.cert_name %></td>
         <td><%= certification.cert_company %></td>
         <td><%= certification.category %></td>
