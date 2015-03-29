@@ -3,6 +3,13 @@ require 'test_helper'
 class CertificationsControllerTest < ActionController::TestCase
   setup do
     @certification = certifications(:one)
+    @update = {
+      cert_name: 'Lorem Ipsum',
+      cert_company: 'Something something',
+      category: 'Lorem',
+      description: 'What it is',
+      logo_url: 'Yes'
+    }
   end
 
   test "should get index" do
@@ -18,8 +25,10 @@ class CertificationsControllerTest < ActionController::TestCase
 
   test "should create certification" do
     assert_difference('Certification.count') do
-      post :create, certification: { category: @certification.category, cert_company: @certification.cert_company, cert_name: @certification.cert_name, description: @certification.description }
+      post :create, certification: @update 
     end
+
+# { category: @certification.category, cert_company: @certification.cert_company, cert_name: @certification.cert_name, description: @certification.description }
 
     assert_redirected_to certification_path(assigns(:certification))
   end
@@ -35,9 +44,11 @@ class CertificationsControllerTest < ActionController::TestCase
   end
 
   test "should update certification" do
-    patch :update, id: @certification, certification: { category: @certification.category, cert_company: @certification.cert_company, cert_name: @certification.cert_name, description: @certification.description }
+    patch :update, id: @certification, certification: @update
     assert_redirected_to certification_path(assigns(:certification))
   end
+
+# { category: @certification.category, cert_company: @certification.cert_company, cert_name: @certification.cert_name, description: @certification.description }
 
   test "should destroy certification" do
     assert_difference('Certification.count', -1) do
