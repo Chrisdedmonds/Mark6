@@ -19,10 +19,10 @@
       <tr>
         <td><img src="<%= certification.logo_url %>" alt="microsoft logo" hieght="40" width="40"></td>
         <td><%= certification.cert_name %></td>
-        <td><%= certification.cert_company %></td>
+        <td class="success"><%= certification.cert_company %></td>
         <td><%= certification.category %></td>
         <td><%= certification.description %></td>
-        <td><%= link_to 'Show', certification %></td>
+        <td><button class="btn btn-default"><%= link_to 'Show', certification %></button></td>
         <td><button class="btn btn-default"><%= link_to 'Edit', edit_certification_path(certification) %></button></td>
         <td><button class="btn btn-default"><%= link_to 'Destroy', certification, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
