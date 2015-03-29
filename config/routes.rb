@@ -1,6 +1,8 @@
 Mark6::Application.routes.draw do
+  get "library/index"
   resources :certifications
-
+  root 'library#index', as: 'library'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
