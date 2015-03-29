@@ -1,2 +1,18 @@
-<h1>Library#index</h1>
-<p>Find me in app/views/library/index.html.erb</p>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>First It. Library Catalog</h1>
+
+<% @certifications.each do |certification| %>
+  <div class="entry">
+  	<%= image_tag(certification.logo_url) %>
+  	<h3><%= certification.cert_name %></h3>
+  	<%= sanitize(certification.description) %>
+  	<div class="category_line">
+  		<span class="category"><%= certification.category %></span>
+  	</div>
+  </div>
+<% end %>
+
+
