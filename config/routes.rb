@@ -1,7 +1,7 @@
 Mark6::Application.routes.draw do
   get "library/index"
   resources :certifications
-
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,7 +9,7 @@ Mark6::Application.routes.draw do
   # You can have the root of your site routed with "root"
   
   # root 'welcome#index'
-  root 'library#index', as: 'library'
+  root 'library#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
