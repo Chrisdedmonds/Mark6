@@ -1,0 +1,13 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+  <h2>Your Pragmatic Bin</h2>
+  	<ul>
+  	  <% @bin.line_items.each do |item| %>
+  	  	<li><%= item.certification.cert_name %></li>
+  	  <% end %>	
+  	</ul>
+
+<%= link_to 'Edit', edit_bin_path(@bin) %> |
+<%= link_to 'Back', bins_path %>

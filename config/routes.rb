@@ -1,4 +1,8 @@
 Mark6::Application.routes.draw do
+  resources :line_items
+
+  resources :bins
+
   get "library/index"
   resources :certifications
   

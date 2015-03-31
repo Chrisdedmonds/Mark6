@@ -11,6 +11,7 @@
   	<%= sanitize(certification.description) %>
   	<div class="category_line">
   		<span class="category"><%= certification.category %></span>
+  		<%= button_to 'Add to Bin', line_items_path(certification_id: certification) %>
   	</div>
   </div>
 <% end %>
